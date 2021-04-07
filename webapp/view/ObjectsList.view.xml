@@ -1,0 +1,51 @@
+<mvc:View
+controllerName="demoapp.controller.ObjectsList"
+xmlns="sap.m"
+xmlns:mvc="sap.ui.core.mvc">
+	<Table
+	id="table"
+	class="sapUiResponsiveMargin"
+	width="auto"
+	items="{
+	path:'object>/Objects'
+	}">
+		<headerToolbar>
+         <Toolbar>
+           <Title text="{i18n>objectlistTitle}"/>
+            <ToolbarSpacer/>
+            <SearchField width="18%" search=".onFilterObjects"/>
+         </Toolbar>
+      </headerToolbar>
+      <columns>
+      	<Column
+      			hAlign="End"
+				minScreenWidth="Small"
+				demandPopin="true"
+				width="6em">
+      		<Text text="{i18n>objectName}"/>
+      	</Column>
+      		<Column
+				hAlign="End">
+				<Text text="{i18n>objectUnitNumber}"/>
+			</Column>
+      </columns>
+      <items>
+      <ColumnListItem
+				type="Navigation"
+				press=".onPress">
+      	<cells>
+      		<ObjectIdentifier title="{object>Name}"/>
+      		<ObjectNumber
+						number="{
+							parts: [{path: 'object>UnitNumber'}, {path: 'view>/currency'}],
+							type: 'sap.ui.model.type.Currency',
+							formatOptions: {
+								showMeasure: false
+							}
+						}"
+						unit="{view>/currency}"/>
+      	</cells>
+      	</ColumnListItem>
+      	</items>
+	</Table>
+</mvc:View>

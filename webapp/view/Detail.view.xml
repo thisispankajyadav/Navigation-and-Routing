@@ -1,0 +1,22 @@
+<mvc:View
+	controllerName="demoapp.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page>
+		<Panel>
+			<ObjectHeader
+				responsive="true"
+				fullScreenOptimized="false"
+				number="{ parts: [{path: 'object>UnitNumber'}, {path: 'view>/currency'}], type: 'sap.ui.model.type.Currency', formatOptions: { showMeasure: false } }"
+				title="{object>Name}"
+				numberUnit="{view>/currency}"/>
+
+		<!--<ObjectHeader-->
+		<!--	intro="{object>Name}"-->
+		<!--	title="{object>UnitNumber}"/>-->
+		<!--	<FormattedText-->
+		<!--	htmlText="{view>/currency}"-->
+		<!--	class="myCustomText"/>-->
+	</Panel>
+	</Page>
+</mvc:View>
